@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="veiwport" content="width=device-width , intial-scale=1.0">
+        <meta name="discription" content="Login page for existing Students">
+        <meta name="keywords" content="Bareilly College">
+        <title>Login Page-Bareilly College Bareilly</title>
+        
+        <link rel="shortcut icon" href="images/logo.png">
+        <link rel="stylesheet" href="css/login_style.css">
+    
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <img src="images/logo.png">
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="Gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <form id="login">
+                <div class="heading">
+                    <h1>Login</h1>
+                    <hr>
+                </div>
+                <label for="user_id">Roll Number</label><br>
+                <input type="text" id="user_id" maxlength="12"required><p></p>
+                <label for="password">Password</label><br>
+                <input type="password" id="password"required><p></p>
+                <button type="button" onclick="validate()">Login</button><br>
+                <div class="checkbox">
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox">Remember Me</label>
+                </div>
+            </form>
+        </section>
+        <script src="javascript/login.js"></script>
+    </body>
+</html>
