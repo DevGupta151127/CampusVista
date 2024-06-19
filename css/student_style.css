@@ -1,0 +1,147 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.top-header{
+    background-color: red;
+    width: 100%;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.content p{
+    margin-left: 50px;
+    margin-top: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+.content button{
+    margin-left: 85%;
+    background-color: transparent;
+    border: 1px solid;
+    color: red;
+}
+.content button img{
+    width: 25px;
+}
+
+/* Student Section */
+
+.student_data button{
+    float: right;
+    background-color: transparent;
+    border: 1px solid;
+    color: darkgray;
+}
+.student_data h3{
+        padding: 20px;
+        background-color: darkgray;
+        font-size: 30px;
+        margin-bottom: 2px;
+}
+.student_data button img{
+    width: 30px;
+    float: inline-end;
+}
+.my_form form{
+    height: 200px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: black;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: antiquewhite;
+}
+.my_form form img{
+    width: 158px;
+    float: inline-end;
+}
+.name{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.data h4{
+    font-size: 20px;
+}
+.data p{
+    font-size: 20px;
+    margin-left: 10px;
+    padding-right: 192px;
+}
+.name1{
+    display: flex;
+    padding-left: 20px;
+}
+.data1 h4{
+    font-size: 20px;
+}
+.data1 p{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+.name2{
+    display: flex;
+    padding-left: 20px;
+}
+.data2 h4{
+    font-size: 20px;
+}
+.data2 p{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+
+/*Result Section */
+
+.result_data h3{
+    padding: 20px;
+    background-color: darkgray;
+    font-size: 30px;
+    margin-bottom: 2px;
+}
+.result_data button{
+        float: right;
+        border: palegoldenrod;
+        background: transparent;
+}
+.result_data img{
+    width: 30px;
+    float: right;
+}
+.form1 h2{
+    padding: 20px;
+    background-color: beige;
+    margin-bottom: 2px;
+}
+table ,th,td{
+    border: 1px solid;
+}
+h1{
+    font-size: 20px;
+    text-align: right;
+}
+.result{
+    padding-right: 5px;
+}
+
+/* Fees Section*/
+
+.fees_data h3{
+    padding: 20px;
+    background-color: darkgray;
+    font-size: 30px;
+    margin-bottom: 2px;
+}
+.fees_data button{
+        float: right;
+        border: palegoldenrod;
+        background: transparent;
+}
+.fees_data img{
+    width: 30px;
+    float: right;
+}

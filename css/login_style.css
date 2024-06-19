@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    padding-bottom: 140px;
+    background-image: url(../images/campus.jpg);
+}
+nav{
+    display: flex;
+    margin-bottom: 100px;
+}
+nav img{
+    width: 150px;
+}
+.nav-links{
+    padding-left: 45%;
+}
+ul{
+    list-style: none;
+    padding-top: 50px;
+}
+ ul li{
+    display: inline-block;
+    padding: 15px;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+}
+form{
+    font-size: 20px;
+    padding-top: 20px;
+    margin-left: 37%;
+    width: 25%;
+    color:burlywood;
+    background-color: whitesmoke;
+    border: 10px solid;
+    border-color: lightsteelblue;
+    border-radius: 30px;
+}
+.heading{
+    text-align: center;
+    padding-inline: 50px;
+    padding-bottom: 40px;
+}
+label{
+    padding: 2px;
+}
+input#user_id {
+    padding: 2px;
+    width: 330px;
+}
+input#password {
+    padding: 2px;
+    width: 330px;
+}
+button {
+    margin-top: 20px;
+    margin-left: 40%;
+    font-size: 20px;
+    background-color: rgb(102, 102, 202);
+    transition: 0.5s;
+}
+button:hover{
+    box-shadow: 10px 10px 20px 0px rgb(102, 102, 202);
+}
+.checkbox {
+    padding: 5px;
+    padding-top: 10px;
+}

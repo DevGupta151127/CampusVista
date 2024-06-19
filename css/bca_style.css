@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body,html{
+	font-family:Roboto,sans-serif,arial;
+	background:#f0f3fa;
+}
+.header{
+    min-height:10%;
+    width: 100%;
+    text-align: center;
+    background-color:aqua;
+}
+.text-box{
+    font-family: bold;
+    font-size: 20px;
+    color: red;
+    padding-bottom: 6px;
+}
+.staff{
+    width: 100%;
+}
+.teachers{
+    margin-top: 6px;
+    padding-top: 6px;
+    text-align: center;
+    font-style: bold;
+    color: black;
+    background-color: palevioletred;
+}
+
+.row{
+    display: flex;
+}
+.row column{
+    width:25%;
+}
+.row img{
+    width: 297px;
+    height : 300px;
+    padding:20px;
+}
+.row p{
+    text-align: center;
+    font-size: 15px;
+    padding-bottom: 6px;
+}
+.subjects{
+    text-align: center;
+    background-color: palevioletred;
+    padding: 8px;
+    margin-top: 6px;
+}
+.semester{
+    font-size:20px;
+    padding-left: 30px;
+}
+.semester-1{
+    text-align: center;
+}
+.semester-1 p{
+    text-align: left;
+    list-style-type: armenian;
+    padding: 8px;
+}
+.semester-2{
+    text-align: center;
+}
+.semester p{
+    text-align: left;
+    padding: 8px;
+}
+.semester-3{
+    text-align: center;
+}
+.semester-3 p{
+    text-align: left;
+    padding: 8px;
+}
+.semester-4{
+    text-align: center;
+}
+.semester-4{
+    padding: 8px;
+    text-align:left;
+}
+.semester-5{
+    text-align: center;
+}
+.semester-5 p{
+    padding: 8px;
+}
+.semester-6{
+    text-align: center;
+}
+.semester-6 p{
+    padding: 8px;
+}
+.button{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.button h1{
+    color: red;
+}
