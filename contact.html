@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bareilly College Bareilly </title>
+    <link rel="stylesheet" href="css/contact_style.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            
+            <div class="nav-links" id="navLinks">
+
+                <span class="icon" onclick="hidemenu()">&#10005;</span>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="courses.html">Course</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+					<li><a href="Gallery.html">Gallery</a></li>
+                </ul>
+            </div> 
+            <span class="icon" onclick="showmenu()">&#9776;</span>
+        </nav>
+        <div class="wrapper">
+		<div class="r_form_wrap">
+			
+			<div class="title">
+				<p>Contact form</p>
+			</div>
+			
+			<!-- Admission from -->
+			<div class="r_form">
+				<form method="post" onsubmit="sendmail(); reset(); return false;">
+					<div class="input_wrap">
+						<label for="yourname">Your Name</label>
+						<div class="input_item">
+							<i class="fa fa-user" id="icon"></i>
+							<input type="text" name="your name" class="input" id="yourname" placeholder="Enter the name" required>
+						</div>
+					</div>
+					<div class="input_wrap">
+						<label for="emailaddress">Email Address</label>
+						<div class="input_item">
+							<i class="fa fa-envelope" id="icon"></i>
+							<input type="email" name="email address" class="input" id="emailaddress" placeholder="Enter the Email ID" required>
+						</div>
+					</div>
+
+					<div class="input_wrap">
+						<label for="phone">Message</label>
+						<div class="input_item">
+							<i class="fa fa-commenting" id="icon"></i>
+                            <textarea name="phone" class="mess" id="phone" placeholder="Write your message..." size="500"></textarea>
+						</div>
+					</div>
+					
+	
+                    <button type="submit">Send</button>
+					<div ></div>
+					<input type="reset" class="clear_ad" value="Clear">	
+				</form>
+				<script>
+					 const form = document.getElementById('contact-form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('mailto:guptadev531@example.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(response => response.text())
+        .then(data => {
+          alert('Email sent successfully!');
+          form.reset();
+        })
+        .catch(error => {
+          alert('Error sending email. Please try again later.');
+          console.error(error);
+        });
+    });
+				</script>
+			</div>
+        </div>
+        </div>
+    </section>
+
+    <div class="none_div"></div> 
+</body>
+</html>
