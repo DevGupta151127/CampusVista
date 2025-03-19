@@ -1,142 +1,96 @@
-# CampusVista - World-Class College Portal
+# CampusVista - College Website
 
-## Overview
+A modern and responsive college website built with HTML, CSS, and JavaScript.
 
-CampusVista is a comprehensive, modern college portal system that provides a seamless experience for students, faculty, and administrators. Built with cutting-edge technologies and best practices, it offers a complete solution for educational institutions.
+## 📚 Features
 
-## Key Features
+- **Home Page**: Welcome section, featured courses, and college highlights
+- **Course Information**: Detailed course listings and descriptions
+- **Admission Process**: Online admission information and guidelines
+- **Student Login**: Secure student login portal
+- **Gallery**: Photo gallery showcasing campus life and events
+- **Contact**: Contact information and inquiry form
+- **BCA Program**: Detailed information about the BCA program
 
-### For Students
-- Interactive Dashboard
-- Course Registration & Management
-- Attendance Tracking
-- Grade Viewing
-- Assignment Submission
-- Fee Payment
-- Library Access
-- Event Calendar
-- Career Services
-- Alumni Network
-
-### For Faculty
-- Course Management
-- Attendance Management
-- Grade Management
-- Assignment Creation
-- Student Progress Tracking
-- Research Portal
-- Department Resources
-
-### For Administrators
-- User Management
-- Course Management
-- Department Management
-- Fee Management
-- Report Generation
-- System Configuration
-- Analytics Dashboard
-
-## Technology Stack
-
-### Backend
-- Node.js with Express
-- MongoDB Database
-- JWT Authentication
-- Socket.IO for Real-time Features
-- Multer for File Uploads
-- Nodemailer for Email Services
-
-### Frontend
-- React.js
-- Material-UI
-- Redux for State Management
-- Axios for API Calls
-- Chart.js for Analytics
-
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 CampusVista/
-├── client/                 # React frontend
-│   ├── public/
-│   └── src/
-│       ├── components/    # Reusable components
-│       ├── pages/        # Page components
-│       ├── redux/        # State management
-│       ├── services/     # API services
-│       └── utils/        # Utility functions
-├── server/                # Node.js backend
-│   ├── config/          # Configuration files
-│   ├── controllers/     # Route controllers
-│   ├── middleware/      # Custom middleware
-│   ├── models/         # Database models
-│   ├── routes/         # API routes
-│   └── utils/          # Utility functions
-├── .env                 # Environment variables
-├── package.json        # Project dependencies
-└── README.md          # Project documentation
+├── css/
+│   ├── admission_style.css
+│   ├── bca_style.css
+│   ├── contact_style.css
+│   ├── courses_style.css
+│   ├── gallery.css
+│   ├── login_style.css
+│   ├── main_style.css
+│   └── student_style.css
+├── javascript/
+│   ├── Main_script.js
+│   ├── login.js
+│   └── logout.js
+├── index.html
+├── admission.html
+├── Amit.html
+├── BCA.html
+├── contact.html
+├── courses.html
+├── Gallery.html
+└── login.html
 ```
 
-## Setup Instructions
+## 🚀 Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/DevGupta151127/CampusVista.git
-   cd CampusVista
-   ```
+1. Clone this repository or download the files
+2. Open `index.html` in your web browser
+3. Navigate through the website using the navigation menu
 
-2. Install dependencies:
-   ```bash
-   # Install backend dependencies
-   npm install
+## 📱 Pages Description
 
-   # Install frontend dependencies
-   cd client
-   npm install
-   ```
+- **index.html**: Main landing page with college overview
+- **admission.html**: Admission process and requirements
+- **courses.html**: List of available courses
+- **login.html**: Student login portal
+- **Gallery.html**: Campus and events photo gallery
+- **contact.html**: Contact information and inquiry form
+- **BCA.html**: Bachelor of Computer Applications program details
+- **Amit.html**: Additional college information
 
-3. Configure environment variables:
-   - Copy `.env.example` to `.env`
-   - Update the variables with your values
+## 💅 Styling
 
-4. Start the development servers:
-   ```bash
-   # Start both frontend and backend
-   npm run dev:full
+The website uses multiple CSS files for modular styling:
+- `main_style.css`: Global styles and common elements
+- `admission_style.css`: Admission page specific styles
+- `courses_style.css`: Course listing styles
+- `login_style.css`: Login form styling
+- And more specific stylesheets for each section
 
-   # Or start them separately
-   npm run dev        # Backend
-   npm run client    # Frontend
-   ```
+## 📜 JavaScript Functionality
 
-5. Access the application:
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
+- `Main_script.js`: Core website functionality
+- `login.js`: Login form validation and processing
+- `logout.js`: Session management and logout functionality
 
-## Security Features
+## 🌐 Browser Compatibility
 
-- JWT-based Authentication
-- Role-based Access Control
-- Password Encryption
-- Secure File Uploads
-- Input Validation
-- XSS Protection
-- CSRF Protection
-- Rate Limiting
+The website is compatible with modern browsers:
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+- Safari
 
-## Contributing
+## 🛠️ Development
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+To modify the website:
+1. Edit HTML files for content changes
+2. Modify CSS files in the `css` directory for styling changes
+3. Update JavaScript files in the `javascript` directory for functionality changes
 
-## License
+## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is open source and available under the MIT License.
 
-## Support
+## 👥 Contact
 
-For support, please contact the development team or create an issue in the repository.
+For any queries or suggestions, please use the contact form on the website.
 
