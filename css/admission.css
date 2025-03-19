@@ -1,0 +1,195 @@
+/* Admission Page Styles */
+.admission-header {
+    padding-top: 100px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+}
+
+.admission-stats {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admission-stats h6 {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.admission-stats p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.admission-process {
+    padding: 5rem 0;
+}
+
+.process-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.process-card h4 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.process-card p {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.requirements-section {
+    background: var(--light-bg);
+    padding: 5rem 0;
+}
+
+.requirement-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.requirement-card h4 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.requirement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirement-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--light-text);
+}
+
+.requirement-list li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.admission-form {
+    padding: 5rem 0;
+}
+
+.form-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.form-select {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.form-check {
+    margin-bottom: 1rem;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.submit-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .admission-header {
+        padding-top: 80px;
+    }
+    
+    .admission-stats {
+        margin-top: 2rem;
+    }
+    
+    .process-card,
+    .requirement-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-card {
+        padding: 1.5rem;
+    }
+} 

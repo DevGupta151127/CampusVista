@@ -1,0 +1,151 @@
+/* Login Page Styles */
+.login-section {
+    min-height: 100vh;
+    padding-top: 80px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.login-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-label {
+    color: #2c3e50;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+    background: #f8f9fa;
+    border-right: none;
+}
+
+.form-control {
+    border-left: none;
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    background: #0d6efd;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+.btn-link {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #0d6efd;
+}
+
+.form-check-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Password Toggle Button */
+#togglePassword {
+    border-left: none;
+    background: #f8f9fa;
+}
+
+#togglePassword:hover {
+    background: #e9ecef;
+}
+
+/* Form Validation Styles */
+.was-validated .form-control:valid,
+.form-control.is-valid {
+    border-color: #198754;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linecap='round' d='M6 3.75v2.5'/%3e%3ccircle cx='6' cy='8.25' r='.75'/%3e%3c/svg%3e");
+}
+
+.invalid-feedback {
+    font-size: 0.875rem;
+    color: #dc3545;
+}
+
+/* Animation */
+.login-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .login-section {
+        padding-top: 60px;
+    }
+    
+    .login-card {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .login-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} 
