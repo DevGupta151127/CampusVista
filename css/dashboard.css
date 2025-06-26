@@ -1,0 +1,253 @@
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    position: fixed;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar .nav-link {
+    padding: 12px 20px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: #f8f9fa;
+    color: #0d6efd;
+}
+
+.sidebar .nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 20px;
+    background: #f8f9fa;
+    min-height: calc(100vh - 60px);
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+#overview {
+    display: block;
+}
+
+/* Welcome Card */
+.welcome-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* Stat Cards */
+.stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #fff;
+}
+
+.stat-content h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.stat-content p {
+    margin: 0;
+    color: #6c757d;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0d6efd;
+}
+
+.timeline-item:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 12px;
+    width: 2px;
+    height: calc(100% + 8px);
+    background: #e0e0e0;
+}
+
+.timeline-item:last-child:after {
+    display: none;
+}
+
+.timeline-date {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.timeline-content h6 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    margin: 5px 0 0;
+    color: #6c757d;
+}
+
+/* Activity List */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #0d6efd;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.activity-content small {
+    color: #6c757d;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .stat-card {
+        margin-bottom: 15px;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} 
+} 

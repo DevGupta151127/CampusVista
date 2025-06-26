@@ -1,0 +1,218 @@
+/* Contact Page Styles */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+   background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.page-header-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+    color: var(--white);
+}
+
+.page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.stats-card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info h3 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form {
+    background-color: var(--background-light);
+}
+
+.form-card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+}
+
+.form-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.input-group-text {
+    background-color: var(--background-light);
+    border: 1px solid var(--gray-300);
+    color: var(--primary-color);
+}
+
+.form-control {
+    border: 1px solid var(--gray-300);
+    padding: 0.75rem 1rem;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn-primary {
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: var(--transition);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: var(--transition);
+    color: var(--text-color);
+    border-color: var(--gray-400);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--gray-200);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    background-color: var(--background-light);
+    padding: 80px 0;
+}
+
+.info-card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    padding: 2.5rem;
+    height: 100%;
+    text-align: center;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.info-card i {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.info-card h4 {
+    color: var(--dark);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.info-card p {
+    color: var(--gray-700);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .contact-info-section {
+        padding: 60px 0;
+    }
+    
+    .info-card {
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Animation Styles */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Form Validation Styles */
+.form-control.is-invalid {
+    border-color: var(--warning-color);
+}
+
+.invalid-feedback {
+    display: none;
+    color: var(--warning-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.form-control.is-invalid + .invalid-feedback {
+    display: block;
+} 

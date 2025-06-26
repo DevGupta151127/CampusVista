@@ -1,59 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="veiwport" content="width=device-width , intial-scale=1.0, maximum-scale=1.0, user-scaled=0">
-<meta name="discription"content="Events And Achievements by Bareilly college Bareilly Aluminies">
-<meta name="keywords"content="Bareilly College Bareilly">
-<meta name="author"content="Rahul,Dev,Akshay,Manish,Sandeep"> 
-<title> Gallery-Bareilly College Bareilly</title>
-
-<link rel="stylesheet" href="css/gallery.css">
-<link rel="shortcut icon" href="images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - CampusVista</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Explore the visual journey through CampusVista's facilities, events, and student life">
+    <meta name="keywords" content="campus gallery, college photos, university life, student activities">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Lightbox CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<section class="header">
-<nav>
-<div class="image"><img src="images/logo.png"></a>
-<div class="nav-links" id="navLinks">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="admission.html">Admission</a></li>
-<li><a href="courses.html">Course</a></li>
-<li><a href="login.html">Login</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="Gallery.html">Gallery</a></li>
-</ul>
-</div>
-</div>
-</nav>
-<div class="row">
-    <div class="column">
-<img src="images/audiotorium.jpg ">
-<p>We have a great campus </p>
-     </div>
-    <div class="coulmn">
-        <img src="images/audiotorium.jpg">
-    </div>
-    <div class="coulmn">
-        <img src="images/audiotorium.jpg">
-    </div>
-    <div class="coulmn">
-        <img src="images/audiotorium.jpg">
-    </div>
-</div>
-<div class="row">
-    <div class="column">
-        <img src="images/campus.jpg">
-    </div>
-    <div class="column">
-        <img src="images/campus.jpg">
-    </div>
-    <div class="column">
-        <img src="images/campus.jpg">
-    </div>
-    <div class="column">
-        <img src="images/campus.jpg">
-    </div>
-</div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="CampusVista Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown">
+                            Academics
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="courses.html">Courses</a></li>
+                            <li><a class="dropdown-item" href="faculty.html">Faculty</a></li>
+                            <li><a class="dropdown-item" href="placement.html">Placements</a></li>
+                            <li><a class="dropdown-item" href="admission.html">Admission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="campus-life.html">Campus Life</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn btn-primary" href="login.html">
+                            <i class="fas fa-user me-2"></i>Student Portal
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold">Gallery</h1>
+                        <p class="lead text-white opacity-90">Take a visual journey through our campus life and activities</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="stats-card bg-white rounded p-4 shadow-sm">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h3 class="counter text-primary">500+</h3>
+                                    <p class="text-dark mb-0">Photos</p>
+                                </div>
+                                <div class="col-6">
+                                    <h3 class="counter text-primary">10+</h3>
+                                    <p class="text-dark mb-0">Categories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Gallery Filter -->
+        <section class="gallery-filter py-4">
+            <div class="container">
+                <div class="filter-buttons d-flex flex-wrap justify-content-center gap-2" data-aos="fade-up">
+                    <button class="btn btn-outline-primary active" data-filter="all">All</button>
+                    <button class="btn btn-outline-primary" data-filter="campus">Campus</button>
+                    <button class="btn btn-outline-primary" data-filter="facilities">Facilities</button>
+                    <button class="btn btn-outline-primary" data-filter="events">Events</button>
+                    <button class="btn btn-outline-primary" data-filter="student-life">Student Life</button>
+                    <button class="btn btn-outline-primary" data-filter="sports">Sports</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="gallery-grid py-5">
+            <div class="container">
+                <div class="row g-4 gallery-masonry">
+                    <!-- Campus Images -->
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="campus" data-aos="fade-up">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/campus-1.jpg" data-lightbox="gallery" data-title="Main Campus Entrance">
+                                <img src="assets/images/gallery/campus-1.jpg" alt="Main Campus Entrance" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Main Campus Entrance</h5>
+                                        <p>Campus</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="campus" data-aos="fade-up" data-aos-delay="100">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/campus-2.jpg" data-lightbox="gallery" data-title="Central Library">
+                                <img src="assets/images/gallery/campus-2.jpg" alt="Central Library" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Central Library</h5>
+                                        <p>Campus</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Facilities Images -->
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="facilities" data-aos="fade-up" data-aos-delay="200">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/lab-1.jpg" data-lightbox="gallery" data-title="Computer Lab">
+                                <img src="assets/images/gallery/lab-1.jpg" alt="Computer Lab" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Computer Lab</h5>
+                                        <p>Facilities</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="facilities" data-aos="fade-up" data-aos-delay="300">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/lab-2.jpg" data-lightbox="gallery" data-title="Science Lab">
+                                <img src="assets/images/gallery/lab-2.jpg" alt="Science Lab" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Science Lab</h5>
+                                        <p>Facilities</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Events Images -->
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="400">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/event-1.jpg" data-lightbox="gallery" data-title="Annual Day">
+                                <img src="assets/images/gallery/event-1.jpg" alt="Annual Day" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Annual Day</h5>
+                                        <p>Events</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="500">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/event-2.jpg" data-lightbox="gallery" data-title="Cultural Festival">
+                                <img src="assets/images/gallery/event-2.jpg" alt="Cultural Festival" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Cultural Festival</h5>
+                                        <p>Events</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Student Life Images -->
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="student-life" data-aos="fade-up" data-aos-delay="600">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/student-1.jpg" data-lightbox="gallery" data-title="Student Activities">
+                                <img src="assets/images/gallery/student-1.jpg" alt="Student Activities" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Student Activities</h5>
+                                        <p>Student Life</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="student-life" data-aos="fade-up" data-aos-delay="700">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/student-2.jpg" data-lightbox="gallery" data-title="Campus Life">
+                                <img src="assets/images/gallery/student-2.jpg" alt="Campus Life" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Campus Life</h5>
+                                        <p>Student Life</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sports Images -->
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="sports" data-aos="fade-up" data-aos-delay="800">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/sports-1.jpg" data-lightbox="gallery" data-title="Sports Complex">
+                                <img src="assets/images/gallery/sports-1.jpg" alt="Sports Complex" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Sports Complex</h5>
+                                        <p>Sports</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 gallery-item" data-category="sports" data-aos="fade-up" data-aos-delay="900">
+                        <div class="gallery-card">
+                            <a href="assets/images/gallery/sports-2.jpg" data-lightbox="gallery" data-title="Sports Events">
+                                <img src="assets/images/gallery/sports-2.jpg" alt="Sports Events" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-caption">
+                                        <h5>Sports Events</h5>
+                                        <p>Sports</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-4">About CampusVista</h5>
+                    <p>Empowering students with quality education and opportunities for a brighter future.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Education Street, City</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@campusvista.edu</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 CampusVista. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-light me-3">Privacy Policy</a>
+                    <a href="#" class="text-light">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary btn-floating">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="javascript/main.js"></script>
 </body>
 </html>

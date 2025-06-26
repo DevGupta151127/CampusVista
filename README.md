@@ -1,96 +1,240 @@
-# CampusVista - College Website
+# CampusVista - Student Management System
 
-A modern and responsive college website built with HTML, CSS, and JavaScript.
+A comprehensive student management system built with the MERN stack (MongoDB, Express.js, React, Node.js) featuring payment integration, course management, and academic tracking.
 
-## 📚 Features
+## Features
 
-- **Home Page**: Welcome section, featured courses, and college highlights
-- **Course Information**: Detailed course listings and descriptions
-- **Admission Process**: Online admission information and guidelines
-- **Student Login**: Secure student login portal
-- **Gallery**: Photo gallery showcasing campus life and events
-- **Contact**: Contact information and inquiry form
-- **BCA Program**: Detailed information about the BCA program
+### Student Features
+- **Authentication & Authorization**: Secure login/registration with JWT
+- **Dashboard**: Overview of academic progress, payments, and schedule
+- **Course Management**: Enroll/drop courses, view course details
+- **Payment System**: Integrated Stripe payment processing
+- **Grade Tracking**: View grades and academic performance
+- **Assignment Submission**: Submit and track assignments
+- **Attendance Tracking**: Mark and view attendance
+- **Profile Management**: Update personal information
 
-## 🗂️ Project Structure
+### Admin Features (Future Implementation)
+- Student management
+- Course creation and management
+- Grade management
+- Payment tracking
+- Report generation
+
+## Tech Stack
+
+### Frontend
+- React 18
+- Material-UI (MUI)
+- Redux Toolkit
+- React Router
+- Axios
+- Chart.js
+- Stripe Elements
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- JWT Authentication
+- Stripe API
+- bcryptjs
+- Express Validator
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB (local or Atlas)
+- Stripe Account (for payments)
+
+## Installation
+
+### 1. Clone the repository
+```bash
+git clone <repository-url>
+cd campusvista
+```
+
+### 2. Install dependencies
+
+#### Frontend
+```bash
+npm install
+```
+
+#### Backend
+```bash
+cd server
+npm install
+```
+
+### 3. Environment Setup
+
+#### Backend (.env)
+Create a `.env` file in the `server` directory:
+```env
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+
+# MongoDB Configuration
+MONGODB_URI=mongodb://localhost:27017/campusvista
+
+# JWT Configuration
+JWT_SECRET=your_jwt_secret_key_here
+
+# Stripe Configuration
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key_here
+STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
+```
+
+#### Frontend (.env)
+Create a `.env` file in the root directory:
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
+```
+
+### 4. Database Setup
+Make sure MongoDB is running locally or update the MONGODB_URI to point to your MongoDB Atlas cluster.
+
+### 5. Stripe Setup
+1. Create a Stripe account
+2. Get your API keys from the Stripe Dashboard
+3. Update the environment variables with your keys
+4. Set up webhook endpoints (optional)
+
+## Running the Application
+
+### Development Mode
+
+#### Backend
+```bash
+cd server
+npm run dev
+```
+
+#### Frontend
+```bash
+npm start
+```
+
+The application will be available at:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000
+
+### Production Mode
+
+#### Backend
+```bash
+cd server
+npm start
+```
+
+#### Frontend
+```bash
+npm run build
+```
+
+## API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register a new student
+- `POST /api/auth/login` - Login student
+- `GET /api/auth/me` - Get current student info
+
+### Students
+- `GET /api/students/profile` - Get student profile
+- `PUT /api/students/profile` - Update student profile
+- `GET /api/students/courses` - Get enrolled courses
+- `POST /api/students/enroll` - Enroll in a course
+- `DELETE /api/students/courses/:id` - Drop a course
+
+### Courses
+- `GET /api/courses` - Get all courses
+- `GET /api/courses/:id` - Get specific course
+- `GET /api/courses/available` - Get available courses
+
+### Payments
+- `POST /api/payments/create-payment-intent` - Create payment intent
+- `POST /api/payments/confirm-payment` - Confirm payment
+- `GET /api/payments/history` - Get payment history
+- `GET /api/payments/outstanding` - Get outstanding payments
+
+### Assignments
+- `GET /api/assignments` - Get assignments
+- `POST /api/assignments/:id/submit` - Submit assignment
+- `GET /api/assignments/:id/submission` - Get submission
+
+### Grades
+- `GET /api/grades` - Get grades
+- `GET /api/grades/course/:id` - Get course grades
+
+### Attendance
+- `GET /api/attendance` - Get attendance
+- `POST /api/attendance/mark` - Mark attendance
+
+## Project Structure
 
 ```
-CampusVista/
-├── css/
-│   ├── admission_style.css
-│   ├── bca_style.css
-│   ├── contact_style.css
-│   ├── courses_style.css
-│   ├── gallery.css
-│   ├── login_style.css
-│   ├── main_style.css
-│   └── student_style.css
-├── javascript/
-│   ├── Main_script.js
-│   ├── login.js
-│   └── logout.js
-├── index.html
-├── admission.html
-├── Amit.html
-├── BCA.html
-├── contact.html
-├── courses.html
-├── Gallery.html
-└── login.html
+campusvista/
+├── src/
+│   ├── components/
+│   │   ├── Login.js
+│   │   ├── Layout.js
+│   │   └── StudentDashboard.js
+│   ├── services/
+│   │   └── api.js
+│   ├── store/
+│   │   ├── index.js
+│   │   └── studentSlice.js
+│   └── App.js
+├── server/
+│   ├── models/
+│   │   ├── Student.js
+│   │   └── Course.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── students.js
+│   │   ├── courses.js
+│   │   ├── payments.js
+│   │   ├── assignments.js
+│   │   ├── grades.js
+│   │   └── attendance.js
+│   ├── middleware/
+│   ├── config/
+│   ├── server.js
+│   └── package.json
+├── package.json
+└── README.md
 ```
 
-## 🚀 Getting Started
+## Contributing
 
-1. Clone this repository or download the files
-2. Open `index.html` in your web browser
-3. Navigate through the website using the navigation menu
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-## 📱 Pages Description
+## License
 
-- **index.html**: Main landing page with college overview
-- **admission.html**: Admission process and requirements
-- **courses.html**: List of available courses
-- **login.html**: Student login portal
-- **Gallery.html**: Campus and events photo gallery
-- **contact.html**: Contact information and inquiry form
-- **BCA.html**: Bachelor of Computer Applications program details
-- **Amit.html**: Additional college information
+This project is licensed under the MIT License.
 
-## 💅 Styling
+## Support
 
-The website uses multiple CSS files for modular styling:
-- `main_style.css`: Global styles and common elements
-- `admission_style.css`: Admission page specific styles
-- `courses_style.css`: Course listing styles
-- `login_style.css`: Login form styling
-- And more specific stylesheets for each section
+For support, email support@campusvista.com or create an issue in the repository.
 
-## 📜 JavaScript Functionality
+## Future Enhancements
 
-- `Main_script.js`: Core website functionality
-- `login.js`: Login form validation and processing
-- `logout.js`: Session management and logout functionality
-
-## 🌐 Browser Compatibility
-
-The website is compatible with modern browsers:
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
-- Safari
-
-## 🛠️ Development
-
-To modify the website:
-1. Edit HTML files for content changes
-2. Modify CSS files in the `css` directory for styling changes
-3. Update JavaScript files in the `javascript` directory for functionality changes
-
-## 📝 License
-
-This project is open source and available under the MIT License.
-
-## 👥 Contact
-
-For any queries or suggestions, please use the contact form on the website.
+- [ ] Admin dashboard
+- [ ] Email notifications
+- [ ] File upload for assignments
+- [ ] Real-time chat
+- [ ] Mobile app
+- [ ] Advanced analytics
+- [ ] Multi-language support
+- [ ] Dark mode
+- [ ] Push notifications
 

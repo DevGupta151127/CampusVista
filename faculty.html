@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty - CampusVista</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Meet our experienced faculty members at CampusVista">
+    <meta name="keywords" content="faculty, professors, teachers, academic staff">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="CampusVista Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown">
+                            Academics
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="courses.html">Courses</a></li>
+                            <li><a class="dropdown-item active" href="faculty.html">Faculty</a></li>
+                            <li><a class="dropdown-item" href="placement.html">Placements</a></li>
+                            <li><a class="dropdown-item" href="admission.html">Admission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="campus-life.html">Campus Life</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn btn-primary" href="login.html">
+                            <i class="fas fa-user me-2"></i>Student Portal
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Faculty Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8" data-aos="fade-right">
+                        <h1 class="display-4 fw-bold text-white">Our Faculty</h1>
+                        <p class="lead text-white opacity-90">Meet our experienced and dedicated teaching staff</p>
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-left">
+                        <div class="stats-card bg-white rounded p-4 shadow-sm">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <h3 class="counter text-primary">150+</h3>
+                                    <p class="text-dark mb-0">Total Faculty</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="counter text-primary">80%</h3>
+                                    <p class="text-dark mb-0">PhD Holders</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="counter text-primary">10+</h3>
+                                    <p class="text-dark mb-0">Years Avg.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Faculty Categories -->
+    <section class="faculty-categories py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Faculty Categories</h2>
+                <p class="text-muted">Explore our diverse teaching departments</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Computer Science</h4>
+                        <p>Expert faculty in programming, AI, and software development</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h4>Mathematics</h4>
+                        <p>Specialized in pure and applied mathematics</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Science</h4>
+                        <p>Research-oriented faculty in physics, chemistry, and biology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Faculty -->
+    <section class="featured-faculty py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Featured Faculty</h2>
+                <p class="text-muted">Meet some of our distinguished professors</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faculty-card">
+                        <div class="faculty-image">
+                            <img src="assets/images/faculty-1.jpg" alt="Professor Name" class="img-fluid">
+                        </div>
+                        <div class="faculty-content">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p class="text-muted">Professor of Computer Science</p>
+                            <p>PhD in Artificial Intelligence from Stanford University</p>
+                            <div class="faculty-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-google"></i></a>
+                                <a href="#"><i class="fab fa-researchgate"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faculty-card">
+                        <div class="faculty-image">
+                            <img src="assets/images/faculty-2.jpg" alt="Professor Name" class="img-fluid">
+                        </div>
+                        <div class="faculty-content">
+                            <h4>Dr. Michael Chen</h4>
+                            <p class="text-muted">Professor of Mathematics</p>
+                            <p>PhD in Applied Mathematics from MIT</p>
+                            <div class="faculty-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-google"></i></a>
+                                <a href="#"><i class="fab fa-researchgate"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faculty-card">
+                        <div class="faculty-image">
+                            <img src="assets/images/faculty-3.jpg" alt="Professor Name" class="img-fluid">
+                        </div>
+                        <div class="faculty-content">
+                            <h4>Dr. Emily Brown</h4>
+                            <p class="text-muted">Professor of Physics</p>
+                            <p>PhD in Quantum Physics from Harvard University</p>
+                            <div class="faculty-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-google"></i></a>
+                                <a href="#"><i class="fab fa-researchgate"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Research -->
+    <section class="faculty-research py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Research & Publications</h2>
+                <p class="text-muted">Our faculty's contributions to academia</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="research-card">
+                        <h4>Research Areas</h4>
+                        <ul class="research-list">
+                            <li>Artificial Intelligence & Machine Learning</li>
+                            <li>Quantum Computing</li>
+                            <li>Data Science & Analytics</li>
+                            <li>Renewable Energy</li>
+                            <li>Biotechnology</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="research-card">
+                        <h4>Recent Publications</h4>
+                        <ul class="publication-list">
+                            <li>
+                                <h5>Advanced Machine Learning Algorithms</h5>
+                                <p>Published in Nature Computing, 2023</p>
+                            </li>
+                            <li>
+                                <h5>Quantum Computing Applications</h5>
+                                <p>Published in Science Journal, 2023</p>
+                            </li>
+                            <li>
+                                <h5>Renewable Energy Systems</h5>
+                                <p>Published in Energy Research, 2023</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Development -->
+    <section class="faculty-development py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Faculty Development</h2>
+                <p class="text-muted">Continuous learning and growth</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="development-card">
+                        <div class="development-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h4>Teaching Excellence</h4>
+                        <p>Regular workshops and training programs</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="development-card">
+                        <div class="development-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h4>Research Support</h4>
+                        <p>Funding and resources for research projects</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="development-card">
+                        <div class="development-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>International Collaboration</h4>
+                        <p>Global partnerships and exchange programs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-4">About CampusVista</h5>
+                    <p>Empowering students with quality education and opportunities for a brighter future.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Education Street, City</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@campusvista.edu</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 CampusVista. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-light me-3">Privacy Policy</a>
+                    <a href="#" class="text-light">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary btn-floating">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="javascript/main.js"></script>
+</body>
+</html> 

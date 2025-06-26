@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life - CampusVista</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Experience the vibrant campus life at CampusVista - Student clubs, sports, events, and more">
+    <meta name="keywords" content="campus life, student activities, college life, university events">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="CampusVista Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown">
+                            Academics
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="courses.html">Courses</a></li>
+                            <li><a class="dropdown-item" href="faculty.html">Faculty</a></li>
+                            <li><a class="dropdown-item" href="placement.html">Placements</a></li>
+                            <li><a class="dropdown-item" href="admission.html">Admission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="campus-life.html">Campus Life</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn btn-primary" href="login.html">
+                            <i class="fas fa-user me-2"></i>Student Portal
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold">Campus Life</h1>
+                        <p class="lead text-white opacity-90">Experience the vibrant and diverse community at CampusVista</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="stats-card bg-white rounded p-4 shadow-sm">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <h3 class="counter text-primary">25+</h3>
+                                    <p class="text-dark mb-0">Student Clubs</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="counter text-primary">50+</h3>
+                                    <p class="text-dark mb-0">Annual Events</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="counter text-primary">12</h3>
+                                    <p class="text-dark mb-0">Sports Teams</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Student Clubs Section -->
+        <section class="student-clubs py-5">
+            <div class="container">
+                <div class="section-header text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-5 fw-bold">Student Clubs</h2>
+                    <p class="text-muted">Join our diverse range of student clubs and organizations</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="club-card">
+                            <div class="club-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Tech Club</h4>
+                            <p>Explore the latest technologies and develop innovative solutions</p>
+                            <a href="#" class="btn btn-outline-primary">Join Club</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="club-card">
+                            <div class="club-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>Art Society</h4>
+                            <p>Express your creativity through various art forms</p>
+                            <a href="#" class="btn btn-outline-primary">Join Club</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="club-card">
+                            <div class="club-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h4>Music Club</h4>
+                            <p>Share your passion for music and perform together</p>
+                            <a href="#" class="btn btn-outline-primary">Join Club</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="club-card">
+                            <div class="club-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h4>Photography Club</h4>
+                            <p>Capture moments and learn photography skills</p>
+                            <a href="#" class="btn btn-outline-primary">Join Club</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="club-card">
+                            <div class="club-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4>Cultural Club</h4>
+                            <p>Celebrate diversity through cultural events</p>
+                            <a href="#" class="btn btn-outline-primary">Join Club</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                        <div class="club-card">
+                            <div class="club-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4>Environmental Club</h4>
+                            <p>Work towards a sustainable future</p>
+                            <a href="#" class="btn btn-outline-primary">Join Club</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sports & Recreation -->
+        <section class="sports-section py-5 bg-light">
+            <div class="container">
+                <div class="section-header text-center mb-5" data-aos="fade-up">
+                    <h2>Sports & Recreation</h2>
+                    <p class="text-muted">Stay active and healthy with our sports facilities</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <div class="sports-facility">
+                            <img src="assets/images/sports-facility.jpg" alt="Sports Facility" class="img-fluid rounded">
+                            <div class="sports-content">
+                                <h4>Sports Complex</h4>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Indoor Basketball Court</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Swimming Pool</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Fitness Center</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Tennis Courts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="sports-teams">
+                            <h4>Varsity Teams</h4>
+                            <div class="team-grid">
+                                <div class="team-item">
+                                    <i class="fas fa-futbol"></i>
+                                    <span>Soccer</span>
+                                </div>
+                                <div class="team-item">
+                                    <i class="fas fa-basketball-ball"></i>
+                                    <span>Basketball</span>
+                                </div>
+                                <div class="team-item">
+                                    <i class="fas fa-volleyball-ball"></i>
+                                    <span>Volleyball</span>
+                                </div>
+                                <div class="team-item">
+                                    <i class="fas fa-swimmer"></i>
+                                    <span>Swimming</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Events -->
+        <section class="campus-events py-5">
+            <div class="container">
+                <div class="section-header text-center mb-5" data-aos="fade-up">
+                    <h2>Upcoming Events</h2>
+                    <p class="text-muted">Join us for exciting campus events and activities</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">15</span>
+                                <span class="month">Mar</span>
+                            </div>
+                            <div class="event-content">
+                                <h4>Annual Cultural Fest</h4>
+                                <p>Celebrate diversity through music, dance, and art</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">20</span>
+                                <span class="month">Mar</span>
+                            </div>
+                            <div class="event-content">
+                                <h4>Tech Symposium</h4>
+                                <p>Showcase of student projects and innovations</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">25</span>
+                                <span class="month">Mar</span>
+                            </div>
+                            <div class="event-content">
+                                <h4>Sports Day</h4>
+                                <p>Annual sports competition and activities</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Activities -->
+        <section class="student-activities py-5 bg-light">
+            <div class="container">
+                <div class="section-header text-center mb-5" data-aos="fade-up">
+                    <h2>Student Activities</h2>
+                    <p class="text-muted">Engage in various activities and make lasting memories</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <div class="activity-card">
+                            <img src="assets/images/student-activity.jpg" alt="Student Activity" class="img-fluid rounded">
+                            <div class="activity-content">
+                                <h4>Community Service</h4>
+                                <p>Make a difference in the community through volunteer work</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Local Outreach Programs</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Environmental Initiatives</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Educational Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="activity-card">
+                            <img src="assets/images/student-activity-2.jpg" alt="Student Activity" class="img-fluid rounded">
+                            <div class="activity-content">
+                                <h4>Leadership Development</h4>
+                                <p>Develop leadership skills through various programs</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Student Government</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Club Leadership</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Event Organization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-4">About CampusVista</h5>
+                    <p>Empowering students with quality education and opportunities for a brighter future.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Education Street, City</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@campusvista.edu</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 CampusVista. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-light me-3">Privacy Policy</a>
+                    <a href="#" class="text-light">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary btn-floating">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="javascript/main.js"></script>
+</body>
+</html> 

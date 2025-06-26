@@ -2,172 +2,322 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admission form- Bareilly College Bareilly </title>
-    <link rel="shortcut icon" href="images/logo.png">
-    <link rel="stylesheet" href="css/admission_style.css">
-	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-	
+    <title>Admission - CampusVista</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Apply for admission to CampusVista - Your gateway to quality education">
+    <meta name="keywords" content="college admission, university admission, higher education, student enrollment">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admission.css">
 </head>
 <body>
-
-  <section class="header">
-    <nav>
-        <a href="index.html"><img src="images/logo.png"></a>
-
-        <div class="nav-links" id="navLinks">
-          <span class="icon" onclick="hidemenu()">&#10005;</span>  
-          <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Admission_page.html">Admission</a></li>
-                <li><a href="courses.html">Course</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="contact.html">Contact</a></li>
-				<li><a href="Gallery.html">Gallery</a></li>
-            </ul>
-        </div> 
-        <span class="icon" onclick="showmenu()">&#9776;</span>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="CampusVista Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown">
+                            Academics
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="courses.html">Courses</a></li>
+                            <li><a class="dropdown-item" href="faculty.html">Faculty</a></li>
+                            <li><a class="dropdown-item" href="placement.html">Placements</a></li>
+                            <li><a class="dropdown-item active" href="admission.html">Admission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="campus-life.html">Campus Life</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn btn-primary" href="login.html">
+                            <i class="fas fa-user me-2"></i>Student Portal
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-	<div class="wrapper">
-		<div class="r_form_wrap">
-			
-			<div class="title">
-				<p>Registration form</p>
-			</div>
-			
-			<!-- Admission from -->
-			<div class="r_form">
-				<form method="post" onsubmit="sendmail(); reset(); return false;">
-					<div class="input_wrap">
-						<label for="yourname">Your Name</label>
-						<div class="input_item">
-							<i class="fa fa-user" id="icon"></i>
-							<input type="text" name="your name" class="input" id="yourname" placeholder="Enter the name" required>
-						</div>
-					</div>
-					<div class="input_wrap">
-						<label for="emailaddress">Email Address</label>
-						<div class="input_item">
-							<i class="fa fa-envelope" id="icon"></i>
-							<input type="text" name="email address" class="input" id="emailaddress" placeholder="Enter the Email ID" required>
-						</div>
-					</div>
+    <!-- Header Section -->
+    <header class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8" data-aos="fade-right">
+                        <h1 class="display-4 fw-bold text-white">Join CampusVista</h1>
+                        <p class="lead text-white opacity-90">Begin your journey towards excellence in education</p>
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-left">
+                        <div class="stats-card bg-white rounded p-4 shadow-sm">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <h3 class="counter text-primary">85%</h3>
+                                    <p class="text-dark mb-0">Accept Rate</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="counter text-primary">3.5</h3>
+                                    <p class="text-dark mb-0">Avg. GPA</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="counter text-primary">15:1</h3>
+                                    <p class="text-dark mb-0">Student Ratio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-					<div class="input_wrap">
-						<label for="phone">Phone</label>
-						<div class="input_item">
-							<i class="fa fa-phone-square" id="icon"></i>
-							<input type="number" name="phone" class="input" id="phone" placeholder="Enter the Mobile number" required>
+    <!-- Admission Process Section -->
+    <section class="admission-process">
+        <div class="container">
+            <h2 class="text-center mb-5">Admission Process</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="process-card">
+                        <div class="process-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Submit Application</h4>
+                        <p>Complete the online application form with all required documents</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="process-card">
+                        <div class="process-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h4>Review Process</h4>
+                        <p>Applications are reviewed by our admission committee</p>
 						</div>
 					</div>
-					<div class="input_wrap">
-						<label>Gender</label>
-						<div class="input_radio">
-							<div class="input_radio_item">
-								<input type="radio" id="male" name="gender" class="radio" value="male" checked>
-								<label for="male" class="radio_mark">
-									<ion-icon class="i" name="male-sharp"></ion-icon>
-								Male</label>
-							</div>
-							<div class="input_radio_item">
-								<input type="radio" id="female" name="gender" class="radio" value="female">
-								<label for="female" class="radio_mark">
-									<ion-icon class="i" name="female-sharp"></ion-icon>
-									Female</label>
-							</div>
-							<div class="input_radio_item">
-								<input type="radio" id="others" name="gender" class="radio" value="others">
-								<label for="others" class="radio_mark">
-									<ion-icon class="i" name="male-female-sharp"></ion-icon>
-									Others</label>
-							</div>
+                <div class="col-md-4">
+                    <div class="process-card">
+                        <div class="process-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>Final Decision</h4>
+                        <p>Receive admission decision and enrollment instructions</p>
 						</div>
 					</div>
-	
-					<div class="input_wrap">
-						<label for="dob">Date Of Birth</label>
-						<div class="input_item">
-							<i class="fa fa-calendar" id="icon"></i>
-							<input type="date" name="dob" class="input" id="dob" required>
 						</div>
 					</div>
+    </section>
 
-					<div class="input_wrap">
-						<label for="course">Course</label>
-						<div class="input_item">
-							<i class="fa fa-caret-square-o-down" aria-hidden="true"id="icon" ></i>
-					<select id="course" name="cars" class="input" required>
-					<option value="select"> Select the Course</option>
-					<option value="bca"> BCA</option>
-					<option value="bscit">BSC </option>
-					<option value="ba">BA</option>
-					<option value="bcom">B.Com </option>
-					<option value="bba">BBA </option>
-					<option value="llb">LLB </option>
+    <!-- Requirements Section -->
+    <section class="requirements-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Admission Requirements</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="requirement-card">
+                        <h4>Academic Requirements</h4>
+                        <ul class="requirement-list">
+                            <li>High school diploma or equivalent</li>
+                            <li>Minimum GPA of 3.0</li>
+                            <li>SAT/ACT scores (if applicable)</li>
+                            <li>English language proficiency</li>
+                        </ul>
+                    </div>
+							</div>
+                <div class="col-md-6">
+                    <div class="requirement-card">
+                        <h4>Documentation</h4>
+                        <ul class="requirement-list">
+                            <li>Official transcripts</li>
+                            <li>Letters of recommendation</li>
+                            <li>Personal statement</li>
+                            <li>Passport/ID proof</li>
+                        </ul>
+							</div>
+							</div>
+						</div>
+					</div>
+    </section>
 
+    <!-- Admission Form Section -->
+    <section class="admission-form">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="form-card">
+                        <h3 class="form-title text-center">Apply Now</h3>
+                        <form id="admissionForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">First Name</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Program</label>
+                                        <select class="form-select" required>
+                                            <option value="">Select Program</option>
+                                            <option value="computer-science">Computer Science</option>
+                                            <option value="engineering">Engineering</option>
+                                            <option value="business">Business</option>
+                                            <option value="arts">Arts & Humanities</option>
+                                        </select>
+						</div>
+					</div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Intake Term</label>
+                                        <select class="form-select" required>
+                                            <option value="">Select Term</option>
+                                            <option value="fall">Fall 2024</option>
+                                            <option value="spring">Spring 2025</option>
+                                            <option value="summer">Summer 2025</option>
 					</select>
 					</div>
 					</div>
-
-
-					<div class="input_wrap">
-						<label for="file">12th Marksheet</label>
-						<div class="input_item">
-							<i class="fa fa-file" id="icon"></i>
-							<input type="file" name="file" class="input" id="file" required>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Upload Documents</label>
+                                        <input type="file" class="form-control" required>
+                                        <small class="text-muted">Upload your transcripts, resume, and other required documents</small>
 						</div>
 					</div>
-
-					<div class="input_wrap">
-						<label for="password">Password</label>
-						<div class="input_item">
-							<i class="fa fa-key" id="icon"></i>
-							<input type="password" name="password" class="input" id="password" placeholder="Enter the password" >
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" required>
+                                        <label class="form-check-label">
+                                            I agree to the terms and conditions
+                                        </label>
 						</div>
 					</div>
-					<div class="input_wrap">
-						<label for="confirmpassword">Confirm Password</label>
-						<div class="input_item">
-							<i class="fa fa-check-circle" id="icon"></i>
-							<input type="password" name="confirm password" class="input" id="confirmpassword" placeholder="Enter the confirm password">
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="submit-button">Submit Application</button>
 						</div>
 					</div>
-
-					
-					<input type="submit" class="button" value="Register Now">
-					
-					<div></div>
-					<input type="reset" class="clear_ad" value="Clear">
-					
 				</form>
 			</div>
-	
+                </div>
 		</div>
 	</div>
 	</section>
-	<div class="none_div">
 
-	</div>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-4">About CampusVista</h5>
+                    <p>Empowering students with quality education and opportunities for a brighter future.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Education Street, City</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@campusvista.edu</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 CampusVista. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-light me-3">Privacy Policy</a>
+                    <a href="#" class="text-light">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary btn-floating">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="javascript/main.js"></script>
+    <script src="javascript/admission.js"></script>
 	</body>
-	<!-- Javascript for this Web page -->
-	<script src=" https://smtpjs.com/v3/smtp.js"></script>
-	<script>
-		function sendmail(){
-		Email.send({}).then(
-	message => alert("Thanks for filling out our form!")
-);
-		}
-	</script>
-	<script>
-	var navLinks= document.getElementById("navLinks");
-
-function showmenu(){
-    navLinks.style.right="0";
-}   
-function hidemenu(){
-    navLinks.style.right="-200px";
-}
-</script>
 </html>

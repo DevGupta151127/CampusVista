@@ -1,0 +1,262 @@
+/* About Page Specific Styles */
+
+/* Hero Section */
+.about-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0 80px;
+    color: #fff;
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: var(--light-bg);
+    padding: 60px 0;
+}
+
+.stats-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-card i {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.stats-card .counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stats-card p {
+    color: var(--text-muted);
+    margin-bottom: 0;
+    color: black;
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+    padding: 80px 0;
+}
+
+.mission-card, .vision-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.mission-card:hover, .vision-card:hover {
+    transform: translateY(-5px);
+}
+
+.mission-card i, .vision-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* History Timeline */
+.history-section {
+    background-color: var(--light-bg);
+    padding: 80px 0;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: calc(50% - 30px);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    left: -40px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    right: -40px;
+}
+
+.timeline-year {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Team Section */
+.team-section {
+    padding: 80px 0;
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.team-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.team-content h4 {
+    margin-bottom: 0.5rem;
+    color: var(--heading-color);
+}
+
+.team-content p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.team-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.team-social a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.team-social a:hover {
+    color: var(--primary-dark);
+}
+
+/* Values Section */
+.values-section {
+    background-color: var(--light-bg);
+    padding: 80px 0;
+}
+
+.value-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.value-card h4 {
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+}
+
+.value-card p {
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-content {
+        width: calc(100% - 30px);
+        margin-left: 30px !important;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before,
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -40px;
+        right: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .about-hero {
+        padding: 120px 0 60px;
+    }
+
+    .stats-card,
+    .mission-card,
+    .vision-card,
+    .team-card,
+    .value-card {
+        margin-bottom: 2rem;
+    }
+} 
