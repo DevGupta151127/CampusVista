@@ -1,240 +1,316 @@
-# CampusVista - Student Management System
+# CampusVista - Modern College Website
 
-A comprehensive student management system built with the MERN stack (MongoDB, Express.js, React, Node.js) featuring payment integration, course management, and academic tracking.
+A full-stack, production-ready college website built with React, Node.js, and MongoDB. Features modern authentication, course management, student portal, and responsive design.
 
-## Features
+## 🚀 Features
 
-### Student Features
-- **Authentication & Authorization**: Secure login/registration with JWT
-- **Dashboard**: Overview of academic progress, payments, and schedule
-- **Course Management**: Enroll/drop courses, view course details
-- **Payment System**: Integrated Stripe payment processing
-- **Grade Tracking**: View grades and academic performance
-- **Assignment Submission**: Submit and track assignments
-- **Attendance Tracking**: Mark and view attendance
-- **Profile Management**: Update personal information
+### Frontend (React + TypeScript)
+- **Modern UI/UX** with Tailwind CSS and Framer Motion
+- **Responsive Design** for all devices
+- **Authentication System** with JWT tokens
+- **Student Dashboard** with profile management
+- **Course Catalog** with search and filtering
+- **Admission System** with document upload
+- **Faculty Directory** with detailed profiles
+- **Gallery & Virtual Tour** with image optimization
+- **Contact Forms** with email notifications
+- **SEO Optimized** with React Helmet
 
-### Admin Features (Future Implementation)
-- Student management
-- Course creation and management
-- Grade management
-- Payment tracking
-- Report generation
+### Backend (Node.js + Express)
+- **RESTful API** with proper error handling
+- **JWT Authentication** with role-based access
+- **MongoDB Database** with Mongoose ODM
+- **File Upload** with Multer and image processing
+- **Email System** with Nodemailer and templates
+- **Rate Limiting** and security middleware
+- **Input Validation** with Express Validator
+- **Password Reset** and email verification
 
-## Tech Stack
+### Security & Performance
+- **HTTPS/SSL** ready for production
+- **CORS** configuration for cross-origin requests
+- **Helmet.js** for security headers
+- **Compression** middleware for performance
+- **Input Sanitization** and validation
+- **Account Lockout** after failed attempts
+- **Password Hashing** with bcrypt
+
+## 🛠️ Tech Stack
 
 ### Frontend
-- React 18
-- Material-UI (MUI)
-- Redux Toolkit
-- React Router
-- Axios
-- Chart.js
-- Stripe Elements
+- **React 18** with Hooks and Context API
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **React Router** for navigation
+- **React Query** for data fetching
+- **React Hook Form** for forms
+- **Axios** for API calls
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- JWT Authentication
-- Stripe API
-- bcryptjs
-- Express Validator
+- **Node.js** with Express.js
+- **MongoDB** with Mongoose
+- **JWT** for authentication
+- **bcryptjs** for password hashing
+- **Multer** for file uploads
+- **Nodemailer** for emails
+- **Express Validator** for validation
+- **Helmet** for security
 
-## Prerequisites
+### Development Tools
+- **ESLint** and **Prettier** for code formatting
+- **Jest** for testing
+- **Nodemon** for development
+- **Concurrently** for running both servers
 
-- Node.js (v14 or higher)
+## 📦 Installation
+
+### Prerequisites
+- Node.js (v18 or higher)
 - MongoDB (local or Atlas)
-- Stripe Account (for payments)
+- Git
 
-## Installation
-
-### 1. Clone the repository
+### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/yourusername/campusvista.git
 cd campusvista
 ```
 
-### 2. Install dependencies
-
-#### Frontend
+### 2. Install Dependencies
 ```bash
+# Install server dependencies
 npm install
-```
 
-#### Backend
-```bash
-cd server
+# Install client dependencies
+cd client
 npm install
+cd ..
 ```
 
 ### 3. Environment Setup
+```bash
+# Copy environment example
+cp env.example .env
 
-#### Backend (.env)
-Create a `.env` file in the `server` directory:
-```env
-# Server Configuration
-PORT=5000
-NODE_ENV=development
-
-# MongoDB Configuration
-MONGODB_URI=mongodb://localhost:27017/campusvista
-
-# JWT Configuration
-JWT_SECRET=your_jwt_secret_key_here
-
-# Stripe Configuration
-STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key_here
-STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
-STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
-```
-
-#### Frontend (.env)
-Create a `.env` file in the root directory:
-```env
-REACT_APP_API_URL=http://localhost:5000/api
-REACT_APP_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
+# Edit .env file with your configuration
+nano .env
 ```
 
 ### 4. Database Setup
-Make sure MongoDB is running locally or update the MONGODB_URI to point to your MongoDB Atlas cluster.
-
-### 5. Stripe Setup
-1. Create a Stripe account
-2. Get your API keys from the Stripe Dashboard
-3. Update the environment variables with your keys
-4. Set up webhook endpoints (optional)
-
-## Running the Application
-
-### Development Mode
-
-#### Backend
 ```bash
-cd server
+# Start MongoDB (if local)
+mongod
+
+# Or use MongoDB Atlas (cloud)
+# Update MONGODB_URI in .env
+```
+
+### 5. Email Configuration
+Update the email settings in `.env`:
+```env
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+```
+
+### 6. Run the Application
+```bash
+# Development (both frontend and backend)
 npm run dev
+
+# Or run separately
+npm run server    # Backend only
+npm run client    # Frontend only
 ```
 
-#### Frontend
-```bash
-npm start
+## 🌐 Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+# Server Configuration
+NODE_ENV=development
+PORT=5000
+CLIENT_URL=http://localhost:3000
+
+# Database
+MONGODB_URI=mongodb://localhost:27017/campusvista
+
+# JWT
+JWT_SECRET=your-super-secret-jwt-key
+
+# Email (Gmail Example)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+
+# File Upload
+MAX_FILE_SIZE=5242880
+UPLOAD_PATH=./server/uploads
+
+# Security
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
 ```
 
-The application will be available at:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:5000
-
-### Production Mode
-
-#### Backend
-```bash
-cd server
-npm start
-```
-
-#### Frontend
-```bash
-npm run build
-```
-
-## API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register a new student
-- `POST /api/auth/login` - Login student
-- `GET /api/auth/me` - Get current student info
-
-### Students
-- `GET /api/students/profile` - Get student profile
-- `PUT /api/students/profile` - Update student profile
-- `GET /api/students/courses` - Get enrolled courses
-- `POST /api/students/enroll` - Enroll in a course
-- `DELETE /api/students/courses/:id` - Drop a course
-
-### Courses
-- `GET /api/courses` - Get all courses
-- `GET /api/courses/:id` - Get specific course
-- `GET /api/courses/available` - Get available courses
-
-### Payments
-- `POST /api/payments/create-payment-intent` - Create payment intent
-- `POST /api/payments/confirm-payment` - Confirm payment
-- `GET /api/payments/history` - Get payment history
-- `GET /api/payments/outstanding` - Get outstanding payments
-
-### Assignments
-- `GET /api/assignments` - Get assignments
-- `POST /api/assignments/:id/submit` - Submit assignment
-- `GET /api/assignments/:id/submission` - Get submission
-
-### Grades
-- `GET /api/grades` - Get grades
-- `GET /api/grades/course/:id` - Get course grades
-
-### Attendance
-- `GET /api/attendance` - Get attendance
-- `POST /api/attendance/mark` - Mark attendance
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 campusvista/
-├── src/
-│   ├── components/
-│   │   ├── Login.js
-│   │   ├── Layout.js
-│   │   └── StudentDashboard.js
-│   ├── services/
-│   │   └── api.js
-│   ├── store/
-│   │   ├── index.js
-│   │   └── studentSlice.js
-│   └── App.js
-├── server/
-│   ├── models/
-│   │   ├── Student.js
-│   │   └── Course.js
-│   ├── routes/
-│   │   ├── auth.js
-│   │   ├── students.js
-│   │   ├── courses.js
-│   │   ├── payments.js
-│   │   ├── assignments.js
-│   │   ├── grades.js
-│   │   └── attendance.js
-│   ├── middleware/
-│   ├── config/
-│   ├── server.js
-│   └── package.json
+├── client/                 # React frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/    # Reusable components
+│   │   ├── contexts/      # React contexts
+│   │   ├── hooks/         # Custom hooks
+│   │   ├── pages/         # Page components
+│   │   ├── services/      # API services
+│   │   ├── styles/        # Global styles
+│   │   └── utils/         # Utility functions
+│   ├── package.json
+│   └── tailwind.config.js
+├── server/                 # Node.js backend
+│   ├── models/            # MongoDB models
+│   ├── routes/            # API routes
+│   ├── middleware/        # Custom middleware
+│   ├── utils/             # Utility functions
+│   ├── uploads/           # File uploads
+│   └── index.js           # Server entry
+├── assets/                # Static assets
 ├── package.json
+├── env.example
 └── README.md
 ```
 
-## Contributing
+## 🚀 Deployment
+
+### Frontend Deployment (Vercel)
+1. Connect your GitHub repository to Vercel
+2. Set build command: `cd client && npm run build`
+3. Set output directory: `client/build`
+4. Add environment variables in Vercel dashboard
+
+### Backend Deployment (Railway/Render)
+1. Connect your GitHub repository
+2. Set build command: `npm install`
+3. Set start command: `npm start`
+4. Add environment variables
+5. Set up MongoDB Atlas connection
+
+### Database (MongoDB Atlas)
+1. Create MongoDB Atlas account
+2. Create a new cluster
+3. Get connection string
+4. Update `MONGODB_URI` in environment variables
+
+### Domain & SSL
+1. Purchase domain (GoDaddy, Namecheap, etc.)
+2. Configure DNS settings
+3. Set up SSL certificate (Let's Encrypt)
+4. Update CORS settings for production
+
+## 🔧 Development
+
+### Available Scripts
+```bash
+# Development
+npm run dev              # Run both frontend and backend
+npm run server           # Run backend only
+npm run client           # Run frontend only
+
+# Production
+npm run build            # Build frontend
+npm start               # Start production server
+
+# Testing
+npm test                # Run tests
+npm run lint            # Lint code
+npm run format          # Format code
+```
+
+### Code Quality
+```bash
+# Install additional dev dependencies
+npm install -D @tailwindcss/forms @tailwindcss/typography @tailwindcss/aspect-ratio
+
+# Run linting
+npm run lint
+
+# Format code
+npm run format
+```
+
+## 📱 Features Overview
+
+### Public Pages
+- **Home**: Hero section, featured courses, stats
+- **About**: College history, mission, vision
+- **Courses**: Course catalog with search and filters
+- **Faculty**: Faculty directory with profiles
+- **Admission**: Application process and forms
+- **Contact**: Contact forms and information
+- **Gallery**: Photo gallery and virtual tour
+- **Campus Life**: Student activities and facilities
+
+### Student Portal
+- **Dashboard**: Overview of applications and courses
+- **Profile**: Personal information management
+- **Applications**: Track admission applications
+- **Documents**: Upload and manage documents
+
+### Admin Features
+- **User Management**: Manage students and faculty
+- **Course Management**: Add/edit courses
+- **Application Review**: Review admission applications
+- **Content Management**: Update website content
+
+## 🔒 Security Features
+
+- **JWT Authentication** with token refresh
+- **Password Hashing** with bcrypt
+- **Rate Limiting** to prevent abuse
+- **Input Validation** and sanitization
+- **CORS** configuration
+- **Security Headers** with Helmet
+- **Account Lockout** after failed attempts
+- **Email Verification** for new accounts
+
+## 📊 Performance Optimizations
+
+- **Image Optimization** with compression
+- **Code Splitting** for better loading
+- **Lazy Loading** for components
+- **Caching** with React Query
+- **Compression** middleware
+- **CDN** ready for static assets
+- **SEO** optimization with meta tags
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -m 'Add feature'`
+4. Push to branch: `git push origin feature-name`
 5. Submit a pull request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Support
+## 🆘 Support
 
-For support, email support@campusvista.com or create an issue in the repository.
+For support, email support@campusvista.edu or create an issue in the repository.
 
-## Future Enhancements
+## 🙏 Acknowledgments
 
-- [ ] Admin dashboard
-- [ ] Email notifications
-- [ ] File upload for assignments
-- [ ] Real-time chat
-- [ ] Mobile app
-- [ ] Advanced analytics
-- [ ] Multi-language support
-- [ ] Dark mode
-- [ ] Push notifications
+- [React](https://reactjs.org/) for the frontend framework
+- [Node.js](https://nodejs.org/) for the backend runtime
+- [MongoDB](https://mongodb.com/) for the database
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Framer Motion](https://framer.com/motion) for animations
 
+---
+
+**Made with ❤️ for modern education** 
