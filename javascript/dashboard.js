@@ -22,22 +22,12 @@ const paymentMethod = document.getElementById('paymentMethod');
 const paymentDetails = document.getElementById('paymentDetails');
 const feePaymentForm = document.getElementById('feePaymentForm');
 
-// Log DOM elements for debugging
-console.log('DOM Elements:', {
-    studentName: studentName,
-    welcomeName: welcomeName,
-    logoutBtn: logoutBtn,
-    sidebar: sidebar,
-    sidebarLinks: sidebarLinks
-});
-
-
 // Fetch student data from backend
 async function fetchStudentData() {
     const studentData = JSON.parse(localStorage.getItem('studentData') || '{}');
     if (!studentData.rollNumber) return null;
     try {
-        const res = await fetch(`http://localhost:5000/api/students/${studentData.rollNumber}`);
+        const res = await fetch(`https://campusvista-ziwq.onrender.com/api/students/${studentData.rollNumber}`);
         if (!res.ok) throw new Error('Failed to fetch student data');
         return await res.json();
     } catch (err) {
@@ -50,6 +40,7 @@ async function fetchStudentData() {
 async function renderDashboard() {
     const student = await fetchStudentData();
     if (!student) return;
+    
     // Set names
     if (studentName) studentName.textContent = student.name;
     if (welcomeName) welcomeName.textContent = student.name;
@@ -57,35 +48,124 @@ async function renderDashboard() {
     // Render Academics section
     renderAcademicsSection(student);
 
-    // TODO: Render attendance, assignments, exams, library, messages, etc. with real data from backend
-
     // Render fee summary
     renderFeeSection(student);
+}
+
 // Render Academics Section
 async function renderAcademicsSection(student) {
     const academicSection = document.getElementById('academic');
     if (!academicSection || !student.rollNumber) return;
     academicSection.innerHTML = `<div class='text-center py-5'><div class='spinner-border text-primary' role='status'></div><div>Loading courses...</div></div>`;
     try {
-        const res = await fetch(`http://localhost:5000/api/courses/${student.rollNumber}/courses`);
+        const res = await fetch(`https://campusvista-ziwq.onrender.com/api/courses/${student.rollNumber}/courses`);
+        if (!res.ok) throw new Error('Failed to fetch courses');
         const courses = await res.json();
-        let html = `<div class="card mb-4 shadow-sm"><div class="card-header bg-primary text-white"><h5 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>My Courses</h5></div><div class="card-body p-0"><div class="table-responsive"><table class="table table-hover align-middle mb-0"><thead class="table-light"><tr><th>Course Code</th><th>Course Name</th><th>Instructor</th><th>Grade</th></tr></thead><tbody>`;
-        for (const course of courses) {
-            let gradeBadge = course.grade ? `<span class='badge bg-success fs-6'><i class='fas fa-star me-1'></i>${course.grade}</span>` : '<span class="text-muted">-</span>';
-            html += `<tr><td class="fw-bold">${course.code}</td><td>${course.name}</td><td>${course.instructor}</td><td>${gradeBadge}</td></tr>`;
-        }
+        
+        let html = `
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>My Courses</h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Instructor</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+        
+        courses.forEach(course => {
+            const gradeBadge = course.grade 
+                ? `<span class='badge bg-success fs-6'><i class='fas fa-star me-1'></i>${course.grade}</span>` 
+                : '<span class="text-muted">-</span>';
+            html += `
+            <tr>
+                <td class="fw-bold">${course.code}</td>
+                <td>${course.name}</td>
+                <td>${course.instructor}</td>
+                <td>${gradeBadge}</td>
+            </tr>`;
+        });
+
         html += `</tbody></table></div></div></div>`;
         academicSection.innerHTML = html;
     } catch (err) {
         academicSection.innerHTML = '<div class="alert alert-danger">Failed to load courses. Please try again later.</div>';
+        console.error('Error loading courses:', err);
     }
 }
+
+// Render Fee Section
+async function renderFeeSection(student) {
+    const feeSection = document.getElementById('fees');
+    if (!feeSection || !student.rollNumber) return;
+    
+    try {
+        // Fetch fee data
+        const res = await fetch(`https://campusvista-ziwq.onrender.com/api/fees/${student.rollNumber}`);
+        if (!res.ok) throw new Error('Failed to fetch fee data');
+        const feeData = await res.json();
+        
+        // Update fee summary
+        updateFeeSummary(feeData);
+        
+        // Update payment history
+        updatePaymentHistory(feeData.transactions || []);
+        
+    } catch (err) {
+        feeSection.innerHTML = '<div class="alert alert-danger">Failed to load fee details. Please try again later.</div>';
+        console.error('Error loading fee data:', err);
+    }
 }
 
-function renderFeeSection(student) {
-    // Update fee summary, payment form, and history with real data
-    // Example: document.querySelector('.fee-summary .fee-item strong').textContent = ...
-    // You can further enhance this to show payment status, due date, etc.
+// Update fee summary
+function updateFeeSummary(feeData) {
+    const feeSummary = document.querySelector('.fee-summary');
+    if (!feeSummary) return;
+
+    feeSummary.innerHTML = `
+        <div class="fee-item d-flex justify-content-between mb-3">
+            <span>Total Fees:</span>
+            <strong>₹${feeData.totalFees?.toLocaleString('en-IN') || '0'}</strong>
+        </div>
+        <div class="fee-item d-flex justify-content-between mb-3">
+            <span>Paid Amount:</span>
+            <strong class="text-success">₹${feeData.paidAmount?.toLocaleString('en-IN') || '0'}</strong>
+        </div>
+        <div class="fee-item d-flex justify-content-between mb-3">
+            <span>Due Amount:</span>
+            <strong class="text-danger">₹${feeData.dueAmount?.toLocaleString('en-IN') || '0'}</strong>
+        </div>
+        <div class="fee-item d-flex justify-content-between">
+            <span>Due Date:</span>
+            <strong class="text-warning">${feeData.dueDate || 'N/A'}</strong>
+        </div>
+    `;
+}
+
+// Update payment history
+function updatePaymentHistory(transactions) {
+    const tableBody = document.querySelector('#fees table tbody');
+    if (!tableBody) return;
+
+    tableBody.innerHTML = transactions.map(transaction => `
+        <tr>
+            <td>${transaction.transactionId || 'N/A'}</td>
+            <td>${transaction.date || 'N/A'}</td>
+            <td>₹${transaction.amount?.toLocaleString('en-IN') || '0'}</td>
+            <td>${transaction.method || 'N/A'}</td>
+            <td><span class="badge bg-${transaction.status === 'Success' ? 'success' : 'danger'}">${transaction.status || 'Pending'}</span></td>
+            <td><button class="btn btn-sm btn-outline-primary" onclick="downloadReceipt('${transaction.transactionId || ''}')">
+                <i class="fas fa-download me-1"></i>Download
+            </button></td>
+        </tr>
+    `).join('');
 }
 
 // On page load
@@ -100,13 +180,7 @@ function checkAuth() {
         const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
         const studentData = JSON.parse(localStorage.getItem('studentData') || '{}');
         
-        console.log('Auth Check:', {
-            isAuthenticated,
-            studentData
-        });
-        
         if (!isAuthenticated || !studentData.rollNumber) {
-            console.log('Authentication failed, redirecting to login');
             window.location.href = 'login.html';
             return;
         }
@@ -115,7 +189,6 @@ function checkAuth() {
         if (studentName) studentName.textContent = studentData.name || 'Student';
         if (welcomeName) welcomeName.textContent = studentData.name || 'Student';
         
-        console.log('Authentication successful');
     } catch (error) {
         console.error('Auth Check Error:', error);
         window.location.href = 'login.html';
