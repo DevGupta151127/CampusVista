@@ -48,39 +48,23 @@ A full-stack, production-ready college website built with React, Node.js, and Mo
 - **Axios** for API calls
 
 ### Backend
-- **Node.js** with Express.js
+
 - **MongoDB** with Mongoose
 - **JWT** for authentication
 - **bcryptjs** for password hashing
 - **Multer** for file uploads
-- **Nodemailer** for emails
 - **Express Validator** for validation
 - **Helmet** for security
 
-### Development Tools
-- **ESLint** and **Prettier** for code formatting
-- **Jest** for testing
-- **Nodemon** for development
-- **Concurrently** for running both servers
 
-## 📦 Installation
-
-### Prerequisites
 - Node.js (v18 or higher)
 - MongoDB (local or Atlas)
 - Git
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/campusvista.git
-cd campusvista
-```
+cd Campus-Vista
 
 ### 2. Install Dependencies
 ```bash
 # Install server dependencies
-npm install
-
 # Install client dependencies
 cd client
 npm install
@@ -107,13 +91,9 @@ mongod
 
 ### 5. Email Configuration
 Update the email settings in `.env`:
-```env
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
 ```
-
 ### 6. Run the Application
 ```bash
 # Development (both frontend and backend)

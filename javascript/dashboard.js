@@ -31,42 +31,68 @@ console.log('DOM Elements:', {
     sidebarLinks: sidebarLinks
 });
 
-// Mock Data (Replace with API calls)
-const mockData = {
-    academic: {
-        courses: [
-            { name: 'Mathematics', code: 'MATH101', instructor: 'Dr. Smith', grade: 'A' },
-            { name: 'Physics', code: 'PHY101', instructor: 'Dr. Johnson', grade: 'B+' },
-            { name: 'Chemistry', code: 'CHEM101', instructor: 'Dr. Williams', grade: 'A-' }
-        ],
-        gpa: 3.8,
-        credits: 45
-    },
-    attendance: {
-        overall: 95,
-        subjects: [
-            { name: 'Mathematics', percentage: 98 },
-            { name: 'Physics', percentage: 92 },
-            { name: 'Chemistry', percentage: 95 }
-        ]
-    },
-    assignments: {
-        pending: [
-            { title: 'Calculus Assignment', dueDate: '2024-03-20', subject: 'Mathematics' },
-            { title: 'Lab Report', dueDate: '2024-03-22', subject: 'Physics' }
-        ],
-        completed: [
-            { title: 'Chemistry Project', submittedDate: '2024-03-15', grade: 'A' }
-        ]
-    },
-    fees: {
-        totalFees: 120000,
-        paidAmount: 0,
-        dueAmount: 120000,
-        dueDate: '30 June, 2024',
-        transactions: []
+
+// Fetch student data from backend
+async function fetchStudentData() {
+    const studentData = JSON.parse(localStorage.getItem('studentData') || '{}');
+    if (!studentData.rollNumber) return null;
+    try {
+        const res = await fetch(`http://localhost:5000/api/students/${studentData.rollNumber}`);
+        if (!res.ok) throw new Error('Failed to fetch student data');
+        return await res.json();
+    } catch (err) {
+        console.error('Error fetching student data:', err);
+        return null;
     }
-};
+}
+
+// Render dashboard sections with real data
+async function renderDashboard() {
+    const student = await fetchStudentData();
+    if (!student) return;
+    // Set names
+    if (studentName) studentName.textContent = student.name;
+    if (welcomeName) welcomeName.textContent = student.name;
+
+    // Render Academics section
+    renderAcademicsSection(student);
+
+    // TODO: Render attendance, assignments, exams, library, messages, etc. with real data from backend
+
+    // Render fee summary
+    renderFeeSection(student);
+// Render Academics Section
+async function renderAcademicsSection(student) {
+    const academicSection = document.getElementById('academic');
+    if (!academicSection || !student.rollNumber) return;
+    academicSection.innerHTML = `<div class='text-center py-5'><div class='spinner-border text-primary' role='status'></div><div>Loading courses...</div></div>`;
+    try {
+        const res = await fetch(`http://localhost:5000/api/courses/${student.rollNumber}/courses`);
+        const courses = await res.json();
+        let html = `<div class="card mb-4 shadow-sm"><div class="card-header bg-primary text-white"><h5 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>My Courses</h5></div><div class="card-body p-0"><div class="table-responsive"><table class="table table-hover align-middle mb-0"><thead class="table-light"><tr><th>Course Code</th><th>Course Name</th><th>Instructor</th><th>Grade</th></tr></thead><tbody>`;
+        for (const course of courses) {
+            let gradeBadge = course.grade ? `<span class='badge bg-success fs-6'><i class='fas fa-star me-1'></i>${course.grade}</span>` : '<span class="text-muted">-</span>';
+            html += `<tr><td class="fw-bold">${course.code}</td><td>${course.name}</td><td>${course.instructor}</td><td>${gradeBadge}</td></tr>`;
+        }
+        html += `</tbody></table></div></div></div>`;
+        academicSection.innerHTML = html;
+    } catch (err) {
+        academicSection.innerHTML = '<div class="alert alert-danger">Failed to load courses. Please try again later.</div>';
+    }
+}
+}
+
+function renderFeeSection(student) {
+    // Update fee summary, payment form, and history with real data
+    // Example: document.querySelector('.fee-summary .fee-item strong').textContent = ...
+    // You can further enhance this to show payment status, due date, etc.
+}
+
+// On page load
+document.addEventListener('DOMContentLoaded', () => {
+    checkAuth();
+    renderDashboard();
+});
 
 // Check Authentication
 function checkAuth() {

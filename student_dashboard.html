@@ -29,21 +29,24 @@
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <span class="brand-text">CampusVista</span>
+    <!-- Modern Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.webp" alt="CampusVista Logo" height="36" class="me-2">
+                CampusVista
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item me-3">
+                        <span class="badge bg-light text-primary px-3 py-2 fs-6" id="studentName">Student Name</span>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-user-circle me-1"></i>
-                            <span id="studentName">Student Name</span>
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle fa-lg me-2"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
@@ -59,49 +62,50 @@
 
     <!-- Dashboard Content -->
     <div class="dashboard-container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="sidebar-header">
-                <h5>Student Portal</h5>
+        <!-- Modern Sidebar -->
+        <div class="sidebar bg-white shadow-sm">
+            <div class="sidebar-header text-center py-4 border-bottom">
+                <img src="assets/images/logo.webp" alt="CampusVista Logo" height="48" class="mb-2">
+                <h5 class="fw-bold mb-0">Student Portal</h5>
             </div>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#overview">
+            <ul class="nav flex-column mt-4">
+                <li class="nav-item mb-2">
+                    <a class="nav-link active d-flex align-items-center" href="#overview">
                         <i class="fas fa-home me-2"></i>Overview
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#academic">
+                <li class="nav-item mb-2">
+                    <a class="nav-link d-flex align-items-center" href="#academic">
                         <i class="fas fa-graduation-cap me-2"></i>Academic
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#attendance">
+                <li class="nav-item mb-2">
+                    <a class="nav-link d-flex align-items-center" href="#attendance">
                         <i class="fas fa-calendar-check me-2"></i>Attendance
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#assignments">
+                <li class="nav-item mb-2">
+                    <a class="nav-link d-flex align-items-center" href="#assignments">
                         <i class="fas fa-tasks me-2"></i>Assignments
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#exams">
+                <li class="nav-item mb-2">
+                    <a class="nav-link d-flex align-items-center" href="#exams">
                         <i class="fas fa-file-alt me-2"></i>Exams
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#fees">
+                <li class="nav-item mb-2">
+                    <a class="nav-link d-flex align-items-center" href="#fees">
                         <i class="fas fa-money-bill-wave me-2"></i>Fees
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#library">
+                <li class="nav-item mb-2">
+                    <a class="nav-link d-flex align-items-center" href="#library">
                         <i class="fas fa-book me-2"></i>Library
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#messages">
+                <li class="nav-item mb-2">
+                    <a class="nav-link d-flex align-items-center" href="#messages">
                         <i class="fas fa-envelope me-2"></i>Messages
                     </a>
                 </li>
@@ -114,9 +118,9 @@
             <section id="overview" class="dashboard-section">
                 <div class="container-fluid">
                     <!-- Welcome Message -->
-                    <div class="welcome-card mb-4">
-                        <h2>Welcome back, <span id="welcomeName">Student</span>!</h2>
-                        <p class="text-muted">Here's what's happening with your studies today.</p>
+                    <div class="welcome-card mb-4 p-4 rounded shadow-sm bg-light">
+                        <h2 class="fw-bold">Welcome back, <span id="welcomeName">Student</span>!</h2>
+                        <p class="text-muted mb-0">Here's what's happening with your studies today.</p>
                     </div>
 
                     <!-- Quick Stats -->

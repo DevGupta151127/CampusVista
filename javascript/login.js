@@ -91,37 +91,6 @@ function showSuccessMessage() {
     }, 3000);
 }
 
-// Mock Student Data (Replace with actual API call)
-const mockStudents = {
-    '220031020064': {
-        name: 'Dev Gupta',
-        rollNumber: '220031020064',
-        password: 'Dev@Gupta',
-        department: 'Computer Science',
-        year: '2nd Year'
-    },
-    '220031020045': {
-        name: 'Amit Rathore',
-        rollNumber: '220031020045',
-        password: 'Amit@Rathore',
-        department: 'Computer Science',
-        year: '2nd Year'
-    },
-    '220031020112': {
-        name: 'Rahul Gangwar',
-        rollNumber: '220031020112',
-        password: 'Rahul@Gangwar',
-        department: 'Computer Science',
-        year: '2nd Year'
-    },
-    '220031020129': {
-        name: 'Sandeep Gupta',
-        rollNumber: '220031020129',
-        password: 'Sandeep@Gupta',
-        department: 'Computer Science',
-        year: '2nd Year'
-    }
-};
 
 // Handle Form Submission
 loginForm.addEventListener('submit', async function(e) {
@@ -137,45 +106,42 @@ loginForm.addEventListener('submit', async function(e) {
         const originalBtnText = submitBtn.innerHTML;
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Logging in...';
-        
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        // Check credentials
+
         const rollNumber = rollNumberInput.value;
         const password = passwordInput.value;
-        
-        const student = mockStudents[rollNumber];
-        
-        if (student && student.password === password) {
-            // Handle Remember Me
-            handleRememberMe();
-            
-            // Store authentication data
-            localStorage.setItem('isAuthenticated', 'true');
-            localStorage.setItem('studentData', JSON.stringify({
-                name: student.name,
-                rollNumber: student.rollNumber,
-                department: student.department,
-                year: student.year
-            }));
-            
-            // Show success message
-            showSuccessMessage();
-            
-            // Redirect to dashboard
-            setTimeout(() => {
-                window.location.href = 'student_dashboard.html';
-            }, 1500);
-        } else {
+
+        // Call backend API
+        const response = await fetch('http://localhost:5000/api/students/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ rollNumber, password })
+        });
+
+        if (!response.ok) {
             throw new Error('Invalid credentials');
         }
-        
+        const data = await response.json();
+
+        // Handle Remember Me
+        handleRememberMe();
+
+        // Store authentication data
+        localStorage.setItem('isAuthenticated', 'true');
+        localStorage.setItem('studentData', JSON.stringify(data));
+
+        // Show success message
+        showSuccessMessage();
+
+        // Redirect to dashboard
+        setTimeout(() => {
+            window.location.href = 'student_dashboard.html';
+        }, 1500);
     } catch (error) {
         console.error('Login error:', error);
         showError(passwordInput, 'Invalid roll number or password');
+        const submitBtn = this.querySelector('button[type="submit"]');
         submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
+        submitBtn.innerHTML = 'Login';
     }
 });
 
@@ -187,17 +153,27 @@ rollNumberInput.addEventListener('input', function() {
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
     checkRememberedRollNumber();
-    
+
     // Add input validation on blur
     rollNumberInput.addEventListener('blur', function() {
         if (this.value && !/^\d{12}$/.test(this.value)) {
             showError(this, 'Roll number must be 12 digits');
         }
     });
-    
+
     passwordInput.addEventListener('blur', function() {
         if (this.value && this.value.length < 8) {
             showError(this, 'Password must be at least 8 characters');
         }
     });
+
+    // Forgot Password Feature
+    // Forgot Password Feature (should be implemented via backend in production)
+    const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+    if (forgotPasswordLink) {
+        forgotPasswordLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Please contact the IT department to reset your password.');
+        });
+    }
 });
