@@ -111,7 +111,7 @@ loginForm.addEventListener('submit', async function(e) {
         const password = passwordInput.value;
 
         // Call backend API
-        const response = await fetch('http://localhost:5000/api/students/login', {
+        const response = await fetch('https://campusvista-ziwq.onrender.com/api/students/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ rollNumber, password })
